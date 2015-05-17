@@ -10,18 +10,30 @@ Assuming that the file is saved in the working directory, so no explicit path is
 
 ```r
 act_dt<-read.csv("activity.csv",header=TRUE, na.strings="NA")
+```
+
+```
+## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
+## or directory
+```
+
+```
+## Error in file(file, "rt"): cannot open the connection
+```
+
+```r
 ##review the data
 head(act_dt)
 ```
 
 ```
-##   steps       date interval
-## 1    NA 2012-10-01        0
-## 2    NA 2012-10-01        5
-## 3    NA 2012-10-01       10
-## 4    NA 2012-10-01       15
-## 5    NA 2012-10-01       20
-## 6    NA 2012-10-01       25
+##   steps       date interval     wd
+## 1    NA 2012-10-01        0 Monday
+## 2    NA 2012-10-01        5 Monday
+## 3    NA 2012-10-01       10 Monday
+## 4    NA 2012-10-01       15 Monday
+## 5    NA 2012-10-01       20 Monday
+## 6    NA 2012-10-01       25 Monday
 ```
 
 ###What is mean total number of steps taken per day?
@@ -141,13 +153,6 @@ It is natural to assume that the pattern of activity will be different depending
 ```r
 ##messages are set to false to avoid package loading warnings
 require(date) ##loading date package to convert dates into day of the week
-```
-
-```
-## Loading required package: date
-```
-
-```r
 ##getting days of the week
 act_dt$wd <- weekdays(as.Date(act_dt$date))
 act_dt$wd <- factor(act_dt$wd, levels= c("Monday", "Tuesday", "Wednesday", 

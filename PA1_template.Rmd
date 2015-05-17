@@ -152,4 +152,4 @@ pl<-qplot(interval, imp.steps, data=act_dt_wd, geom=c("line"), xlab="Interval",
 pl+  facet_wrap(~day_type, ncol = 1)
 ```
 
-Looking at both plots we can observe a clear distinction between the two. The weekday plot shows more intervals with fewer steps in them, while weekend activities more equaly distributed acorss various step counts. That seems to be reasonable because usually people are more active during the weekends, since most of people now have desk jobs.
+Looking at both plots we can observe a clear distinction between the two. The weekday plot shows more activity in just one set of intervals, while weekend plot shows activity better distributed acorss all time intervals. It makes sense because most of us spend time communting on the week days, and at the same time have sedetary jobs. At the same time during the weekends we are free to move around, and at the same time we are not forced into a fixed schedule.
